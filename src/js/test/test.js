@@ -1,24 +1,27 @@
-require('../logic/helper.js');
-require('../logic/calculator.js');
+import Calculator from '../logic/calculator';
+import Helper from '../logic/helper';
+
+let helper = new Helper();
+let calculator = new Calculator();
 
 test('Check string Lenght', () => {
-  let value = stringLength('info');
-  expect(value).tobe(4);
+  let value = helper.stringLength('info');
+  expect(value).toBe(4);
   expect(value).toBeGreaterThanOrEqual(1);
 });
 
 test('Reverse String: reverseString("sum") should return mus', () => {
   let value = reverseString('sum');
-  expect(value).tobe('mus');
+  expect(value).toBe('mus');
 });
 
 describe('Calculator Class', () => {
   test('Add: add(2 , 2) should return 4', () => {
-    expect(calculator.add(2, 2).tobe(4));
+    expect(calculator.add(2, 2).toBe(4));
   });
 
   test('Subtract: sub(2,1) should return 1', () => {
-    expect(calculator.subtract(2, 1).tobe(1));
+    expect(calculator.subtract(2, 1).toBe(1));
   });
 
   test('divide: divide(3,1) should return 3', () => {
@@ -26,10 +29,10 @@ describe('Calculator Class', () => {
   });
 
   test('multiply: multiply(4,2) should return 8', () => {
-    expect(calculator.subtract(4, 2).tobe(8));
+    expect(calculator.subtract(4, 2).toBe(8));
   });
 });
 
 test('capitalize: capitalize("information") should return 8', () => {
-  expect(helper.capitalize('hello').tobe('Helo'));
+  expect(helper.capitalize('hello').toBe('Helo'));
 });
