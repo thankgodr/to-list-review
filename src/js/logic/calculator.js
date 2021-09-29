@@ -1,1 +1,1 @@
-export default class Calculator {}
+let calculator = {};

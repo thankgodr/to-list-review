@@ -1,1 +1,3 @@
-export default class Helper {}
+function stringLength(str) {
+  return str.length;
+}

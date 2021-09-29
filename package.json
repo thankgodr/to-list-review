@@ -8,6 +8,12 @@
     "start": "webpack serve --open",
     "build": "webpack"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thankgodr/-To-do-list.git"
@@ -20,11 +26,14 @@
   },
   "homepage": "https://github.com/thankgodr/-To-do-list#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "babel-loader": "^8.2.2",
     "css-loader": "^6.3.0",
     "html-webpack-plugin": "^5.3.2",
     "jest": "^27.2.3",
     "style-loader": "^3.3.0",
-    "webpack": "^5.53.0",
+    "webpack": "^5.55.0",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.2.1"
   }

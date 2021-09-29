@@ -1,19 +1,14 @@
-import Helper from '../logic/helper';
-import Calculator from '../logic/calculator';
-import { jest } from '@jest/globals';
-jest.useFakeTimers();
-
-let helper = new Helper();
-let calculator = new Calculator();
+require('../logic/helper.js');
+require('../logic/calculator.js');
 
 test('Check string Lenght', () => {
-  let value = helper.stringLength('info');
+  let value = stringLength('info');
   expect(value).tobe(4);
   expect(value).toBeGreaterThanOrEqual(1);
 });
 
 test('Reverse String: reverseString("sum") should return mus', () => {
-  let value = helper.reverseString('sum');
+  let value = reverseString('sum');
   expect(value).tobe('mus');
 });
 
