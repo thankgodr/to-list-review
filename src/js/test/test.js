@@ -11,28 +11,28 @@ test('Check string Lenght', () => {
 });
 
 test('Reverse String: reverseString("sum") should return mus', () => {
-  let value = reverseString('sum');
+  let value = helper.reverseString('sum');
   expect(value).toBe('mus');
 });
 
 describe('Calculator Class', () => {
   test('Add: add(2 , 2) should return 4', () => {
-    expect(calculator.add(2, 2).toBe(4));
+    expect(calculator.add(2, 2)).toBe(4);
   });
 
   test('Subtract: sub(2,1) should return 1', () => {
-    expect(calculator.subtract(2, 1).toBe(1));
+    expect(calculator.subtract(2, 1)).toBe(1);
   });
 
   test('divide: divide(3,1) should return 3', () => {
-    expect(calculator.subtract(3, 1).tobe(3));
+    expect(calculator.divide(3, 1)).toBe(3);
   });
 
   test('multiply: multiply(4,2) should return 8', () => {
-    expect(calculator.subtract(4, 2).toBe(8));
+    expect(calculator.multiply(1, 2)).toBe(2);
   });
 });
 
 test('capitalize: capitalize("information") should return 8', () => {
-  expect(helper.capitalize('hello').toBe('Helo'));
+  expect(helper.capitalize('hello')).toBe('Hello');
 });
