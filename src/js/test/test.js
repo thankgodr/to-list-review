@@ -2,35 +2,15 @@ import Calculator from '../logic/calculator';
 import Helper from '../logic/helper';
 import TaskManager from '../logic/taskManager';
 import Task from '../models/task';
-import 'jest-localstorage-mock';
+import Mockstorage from './mockstorage';
 
+global.localStorage = new Mockstorage();
 let helper = new Helper();
 let calculator = new Calculator();
 let taskManager = new TaskManager([]);
 let previousTaskArrayLenth = taskManager.tasksArray.length;
 let task = new Task('Cook Fish');
 taskManager.addTask(task);
-
-//Mock Local Storage
-var localStorageMock = (function () {
-  var store = {};
-
-  return {
-    getItem: function (key) {
-      return store[key] || null;
-    },
-    setItem: function (key, value) {
-      store[key] = value.toString();
-    },
-    clear: function () {
-      store = {};
-    },
-  };
-})();
-
-Object.defineProperty(window, 'localStorage', {
-  value: localStorageMock,
-});
 
 test('check id task was added', () => {
   expect(previousTaskArrayLenth).toBeLessThan(previousTaskArrayLenth + 1);
