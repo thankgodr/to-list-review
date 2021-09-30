@@ -4,11 +4,11 @@ import '../css/style.css';
 
 let taskManager = null;
 
-function deleteTask(deleteIndex) {
+export function deleteTask(deleteIndex) {
   taskManager.removeTask(deleteIndex);
 }
 
-function printInitialTasks() {
+export function printInitialTasks() {
   let savedTasked = JSON.parse(localStorage.getItem('taskDbKey'));
   if (savedTasked == null) {
     savedTasked = [];
@@ -75,14 +75,14 @@ function printInitialTasks() {
 }
 printInitialTasks();
 
-function removeALlCompleted() {
+export function removeALlCompleted() {
   const tempArr = taskManager.tasksArray.filter((task) => !task.completed);
   taskManager.tasksArray = tempArr;
   taskManager.updateALL();
   printInitialTasks();
 }
 
-function addTask(taskTitle) {
+export function addTask(taskTitle) {
   const singleTask = new Task(taskTitle);
   singleTask.index = taskManager.tasksArray.lenght;
   taskManager.addTask(singleTask);
