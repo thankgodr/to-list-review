@@ -13,7 +13,11 @@ let task = new Task('Cook Fish');
 taskManager.addTask(task);
 
 test('check id task was added', () => {
-  expect(previousTaskArrayLenth).toBeLessThan(previousTaskArrayLenth + 1);
+  expect(previousTaskArrayLenth).toBeLessThan(taskManager.tasksArray.length);
+});
+test('Check delete Task works', () => {
+  taskManager.removeTask(0);
+  expect(previousTaskArrayLenth).toBe(taskManager.tasksArray.length);
 });
 
 test('Check string Lenght', () => {
