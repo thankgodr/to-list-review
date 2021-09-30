@@ -10,7 +10,7 @@ const task2 = new Task('Cook Yam');
 const task3 = new Task('Cook Rice');
 
 //Act and Assert
-describe('Taskmanager Add and Delete Test', () => {
+describe('Taskmanager Add', () => {
   test('Add task', () => {
     taskManager.addTask(task);
     taskManager.addTask(task2);
@@ -28,7 +28,9 @@ describe('Taskmanager Add and Delete Test', () => {
   test('Task.index must be +1 with the taxk position in the arra', () => {
     expect(taskManager.tasksArray[0].index).toBe(1);
   });
+});
 
+describe('TaskManager Delete', () => {
   test('Delete Task', () => {
     taskManager.removeTask(0);
     expect(taskManager.tasksArray.length).toBe(1);
@@ -36,5 +38,10 @@ describe('Taskmanager Add and Delete Test', () => {
 
   test('The right task was deleted', () => {
     expect(taskManager.tasksArray[0].description).toEqual(task2.description);
+  });
+
+  test('Task List should be empty', () => {
+    taskManager.removeTask(0);
+    expect(taskManager.tasksArray.length).toBe(0);
   });
 });
