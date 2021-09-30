@@ -1,6 +1,10 @@
 import TaskManager from './logic/taskManager';
 import Task from './models/task';
-import '../css/style.css';
+//import '../css/style.css'; //Todo Uncomment after test
+
+//TODO remove after
+import Mockstorage from '../js/test/mockstorage';
+global.localStorage = new Mockstorage();
 
 let taskManager = null;
 
